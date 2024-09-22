@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Cloud Study Jam 2023 - Leaderboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <h1>Google Cloud Study Jam 2023</h1>
+        <h2>LEADERBOARD</h2>
+        <p id="lastUpdated"></p>
+    </div>
+
+    <form id="searchForm">
+        <input type="text" id="searchInput" placeholder="Search by name...">
+        <button type="submit" id="searchButton">Search</button>
+    </form>
+
+    <div id="table-container">
+        <table id="leaderboard" class="styled-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>User Name</th>
+                    <th>Milestone Earned</th>
+                    <th># of Skill Badges Completed</th>
+                    <th># of Arcade Games Completed</th>
+                    <th># of Trivia Games Completed</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <p id="modalContent"></p>
+        </div>
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <footer>
+        Made by GDG On Campus KARE!<br>
+        <a href="https://gdgoncampus.tech" style="color: aliceblue;">GDG On Campus | JGEC</a>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>i
