@@ -4,52 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Cloud Study Jam 2023 - Leaderboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="header">
-        <h1>Google Cloud Study Jam 2023</h1>
-        <h2>LEADERBOARD</h2>
-        <p id="lastUpdated"></p>
-    </div>
+    <div class="container">
+        <header>
+            <h1>Arcade Facilitator 2K24</h1>
+            <h2>LEADERBOARD</h2>
+            <p id="lastUpdated"></p>
+        </header>
 
-    <form id="searchForm">
-        <input type="text" id="searchInput" placeholder="Search by name...">
-        <button type="submit" id="searchButton">Search</button>
-    </form>
+        <form id="searchForm">
+            <input type="text" id="searchInput" placeholder="Search by name...">
+            <button type="submit" id="searchButton">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
 
-    <div id="table-container">
-        <table id="leaderboard" class="styled-table">
-            <thead>
-                <tr>
-                    <th>Rank</th>
-                    <th>User Name</th>
-                    <th>Milestone Earned</th>
-                    <th># of Skill Badges Completed</th>
-                    <th># of Arcade Games Completed</th>
-                    <th># of Trivia Games Completed</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+        <div class="table-container">
+            <table id="leaderboard" class="styled-table">
+                <thead>
+                    <tr>
+                        <th data-sort="rank">Rank <i class="fas fa-sort"></i></th>
+                        <th data-sort="name">User Name <i class="fas fa-sort"></i></th>
+                        <th data-sort="milestone">Milestone Earned <i class="fas fa-sort"></i></th>
+                        <th data-sort="skillBadges"># of Skill Badges Completed <i class="fas fa-sort"></i></th>
+                        <th data-sort="arcadeGames"># of Arcade Games Completed <i class="fas fa-sort"></i></th>
+                        <th data-sort="triviaGames"># of Trivia Games Completed <i class="fas fa-sort"></i></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
     </div>
 
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <h3 id="modalTitle"></h3>
-            <p id="modalContent"></p>
+            <div id="modalContent"></div>
         </div>
     </div>
 
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <footer>
         Made by GDG On Campus KARE!<br>
-        <a href="https://gdgoncampus.tech" style="color: aliceblue;">GDG On Campus | JGEC</a>
+        <a href="https://gdgoncampus.tech">GDG On Campus | JGEC</a>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
     <script src="index.js"></script>
 </body>
-</html>i
+</html>
