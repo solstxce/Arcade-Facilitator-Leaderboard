@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWASP KARE Events</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;700&display=swap');
+
+        html {
+            box-sizing: border-box;
+            background: black;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            color: #ffffff;
+        }
+
+        .nav-dots {
+            position: fixed;
+            top: 50%;
+            right: 5%;
+            transform: translateY(-50%);
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border: 2px solid #f1c40f;
+            border-radius: 50%;
+            list-style: none;
+            background: #121212;
+            transition: all 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .nav-dot:hover,
+        .nav-dot.is-active {
+            transform: scale(1.8);
+            background: #f1c40f;
+        }
+
+        .main {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .section {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background-color: #121212;
+        }
+
+        .section__heading {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            font-size: 2.5rem;
+            color: #f1c40f;
+            margin-bottom: 1rem;
+        }
+
+        .event-content {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .event-image {
+            width: 600px;
+            height: 400px;
+            object-fit: cover;
+            object-position: center;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+        }
+
+        .club-poster {
+            height: 70px;
+            width: 220px;
+            filter: invert(100%) contrast(100%);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .section__heading {
+                font-size: 1.8rem;
+            }
+            
+            .event-content {
+                font-size: 0.9rem;
+            }
+
+            .event-image {
+                width: 300px;
+                height: 200px;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js"></script>
+</head>
+<body>
+    <img src="https://owasp.org/assets/images/logo.png" alt="OWASP Logo" class="club-poster">
+    
+    <ul class="nav-dots" id="js-dots">
+        <li class="nav-dot"></li>
+        <li class="nav-dot"></li>
+        <li class="nav-dot"></li>
+        <li class="nav-dot"></li>
+        <li class="nav-dot"></li>
+    </ul>
+
+    <main class="main">
+        <section class="section">
+            <h2 class="section__heading">Hack the Matrix: Network Pentesting 101</h2>
+            <div class="event-content">
+                <img src="https://i.ibb.co/c6cJ512/Owasp-sep-9.jpg" alt="Network Pentesting Event" class="event-image">
+                <p>Join us for Network Pentesting 101 by OWASP KARE on September 9, 2024. Dive into network penetration testing, find vulnerabilities, and apply robust security practices. Led by expert Mr K.Hitesh Kumar Chowdary.</p>
+            </div>
+        </section>
+        <section class="section">
+            <h2 class="section__heading">Cloud Fortress - An Introduction to Cloud Security</h2>
+            <div class="event-content">
+                <img src="https://i.ibb.co/5KQwc4w/Owasp-aug-13-by-sanjeev-jaiswal.jpg" alt="Cloud Security Event" class="event-image">
+                <p>Cloud Fortress: An Introduction to Cloud Security by OWASP KARE on August 13th, 2024. Industry expert Sanjeev Kumar Jaiswal provided invaluable insights into cloud security and security architecture.</p>
+            </div>
+        </section>
+        <section class="section">
+            <h2 class="section__heading">Getting Into Cybersecurity</h2>
+            <div class="event-content">
+                <img src="https://i.ibb.co/D7m9mJC/Owasp-aug-1-by-Grant-Ongers.jpg" alt="Cybersecurity Event" class="event-image">
+                <p>Join us for an insightful webinar on Cyber Security with our esteemed speaker, Grant Ongers. Learn about the latest trends and best practices in cybersecurity. Event Date: August 1st, 2024.</p>
+            </div>
+        </section>
+        <section class="section">
+            <h2 class="section__heading">Cybersecurity Careers in the AI Era</h2>
+            <div class="event-content">
+                <img src="https://i.ibb.co/rGj9KrZ/Owasp-june-19-by-Prashasth-Baliga-poster.jpg" alt="AI and Cybersecurity Event" class="event-image">
+                <p>Explore cybersecurity careers in the AI era with Prashasth Baliga, Cyber Security Manager at Palo Alto Labs. Event Date: June 19th, 2024. Gain valuable insights for your cybersecurity career path.</p>
+            </div>
+        </section>
+        <section class="section">
+            <h2 class="section__heading">OSINT Workshop</h2>
+            <div class="event-content">
+                <img src="https://i.ibb.co/LnyBjvM/Owasp-may-31-osintworkshop.jpg" alt="OSINT Workshop" class="event-image">
+                <p>Join our exclusive OSINT Workshop at OWASP KARE! Learn how to gather, analyze, and utilize publicly available information in cybersecurity contexts. Event Date: May 31st, 2024. Speaker: Nipun Negi (President, OWASP KARE).</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        class Slider {
+            constructor(options) {
+                this.sections = document.querySelectorAll(options.section);
+                this.navigation = document.querySelector(options.dots);
+                this.currentIndex = 0;
+                this.isAnimating = false;
+
+                this.navigation.addEventListener('click', this.scrollToSection.bind(this));
+                window.addEventListener('wheel', this.handleScroll.bind(this));
+
+                this.initializeSections();
+                this.setDotStatus();
+            }
+
+            initializeSections() {
+                gsap.set(this.sections, { yPercent: 100 });
+                gsap.set(this.sections[0], { yPercent: 0 });
+            }
+
+            removeDotStyles() {
+                const dots = this.navigation;
+                const is_active = dots.querySelector('.is-active');
+
+                if (is_active != null) {
+                    is_active.classList.remove('is-active');
+                }
+            }
+
+            setDotStatus() {
+                this.removeDotStyles();
+                const dots = Array.from(this.navigation.children);
+                dots[this.currentIndex].classList.add('is-active');
+            }
+
+            handleScroll(e) {
+                if (this.isAnimating) return;
+
+                const direction = e.deltaY > 0 ? 1 : -1;
+                const nextIndex = this.currentIndex + direction;
+
+                if (nextIndex >= 0 && nextIndex < this.sections.length) {
+                    this.scrollToIndex(nextIndex);
+                }
+            }
+
+            scrollToIndex(index) {
+                if (this.isAnimating) return;
+                this.isAnimating = true;
+
+                const currentSection = this.sections[this.currentIndex];
+                const nextSection = this.sections[index];
+
+                gsap.to(currentSection, {
+                    yPercent: index > this.currentIndex ? -100 : 100,
+                    duration: 1,
+                    ease: "power2.inOut"
+                });
+
+                gsap.to(nextSection, {
+                    yPercent: 0,
+                    duration: 1,
+                    ease: "power2.inOut",
+                    onComplete: () => {
+                        this.currentIndex = index;
+                        this.setDotStatus();
+                        this.isAnimating = false;
+                    }
+                });
+            }
+
+            scrollToSection(e) {
+                const dots = Array.from(this.navigation.children);
+                const targetIndex = dots.indexOf(e.target);
+
+                if (targetIndex !== -1 && targetIndex !== this.currentIndex) {
+                    this.scrollToIndex(targetIndex);
+                }
+            }
+        }
+
+        new Slider({
+            section: '.section',
+            dots: '#js-dots',
+        });
+    </script>
+</body>
+</html>
